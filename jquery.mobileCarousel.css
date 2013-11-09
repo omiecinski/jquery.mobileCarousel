@@ -1,0 +1,42 @@
+/* --- jquery.mobileCarousel --- */
+.carousel {
+	overflow: hidden;
+	position: relative;
+	-webkit-transition: height 0.4s linear;
+	-moz-transition: height 0.4s linear;
+	transition: height 0.4s linear;
+}
+.carousel > * {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 100%;
+}
+.carousel > *:first-child {
+	left: 0;
+}
+.animateLeft {
+	-webkit-transition: left 0.4s linear;
+	-moz-transition: left 0.4s linear;
+	transition: left 0.4s linear;
+}
+
+/* Optional indicator styles */
+.indicator {
+	list-style: none;
+}
+.indicator > * {
+	width: 5px;
+	height: 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #505051;
+	margin-right: 5px;
+	display: inline-block;
+}
+.indicator .active {
+	background-color: #959698;
+	border-color: #959698;
+}
+/* --- # --- */
