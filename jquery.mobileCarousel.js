@@ -283,13 +283,14 @@
                 e.currentTarget.removeEventListener(transitionEnd, cleanup, false);
               };
 
-              to.add(from).addClass(_settings.animationClass);
-              from.css({left: (-100 * direction) + "%"});
-
-              if(transitionEnd !== false){
-                to.css({left: 0}).get(0).addEventListener(transitionEnd, cleanup, false);
+							if(transitionEnd !== false){
+								to.add(from).addClass(_settings.animationClass);
+								
+								from.css({left: (-100 * direction) + "%"});
+								to.css({left: 0}).get(0).addEventListener(transitionEnd, cleanup, false);
               } else {
-                to.css({left: 0});
+								from.animate({left: (-100 * direction) + "%"});
+								to.animate({left: 0});
               }
             },50);
 
