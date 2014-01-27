@@ -140,14 +140,17 @@
     // PUBLIC METHODS
     methods = {
       init: function(o){
+				if(typeof o === "undefined"){
+					o = {};
+				}
+			
+				if(typeof o.exclude !== "undefined" && o.exclude !== ""){
+					o.exclude = ":not("+o.exclude+")";
+				}
         return this.each(function() {
           var $el = $(this),
             self = this,
             _settings;
-        
-          if(typeof o.exclude !== "undefined" && o.exclude !== ""){
-            o.exclude = ":not("+o.exclude+")";
-          }
           
           _settings = $.extend({}, settings, o);
           
@@ -290,7 +293,9 @@
 								to.css({left: 0}).get(0).addEventListener(transitionEnd, cleanup, false);
               } else {
 								from.animate({left: (-100 * direction) + "%"});
-								to.animate({left: 0});
+								to.animate({left: 0}, function(){
+									$el.animate({height: to.outerHeight(true) + "px"});
+								});
               }
             },50);
 
