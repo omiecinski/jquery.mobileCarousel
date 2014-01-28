@@ -300,7 +300,7 @@
             },50);
 
             // trigger a custom event to indicate the carousel changed; useful for custom callbacks
-            $el.trigger("carousel.change", [this.carousel.currentSlide, targetIndex]);
+            $el.trigger("carouseljs.change", [this.carousel.currentSlide, targetIndex]);
             
             this.carousel.currentSlide = targetIndex;
             updateCounter(this.carousel.counter, targetIndex);
@@ -336,7 +336,7 @@
           }
           
           // trigger a custom event to indicate the carousel changed; useful for custom callbacks
-          $el.trigger("carousel.skip", [this.carousel.currentSlide, targetIndex]);
+          $el.trigger("carouseljs.skip", [this.carousel.currentSlide, targetIndex]);
           
           this.carousel.currentSlide = targetIndex;
           updateCounter(this.carousel.counter, targetIndex);
