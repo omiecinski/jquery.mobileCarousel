@@ -294,7 +294,9 @@
               } else {
 								from.animate({left: (-100 * direction) + "%"});
 								to.animate({left: 0}, function(){
-									$el.animate({height: to.outerHeight(true) + "px"});
+									if(_settings.fixedHeight === false){
+										$el.animate({height: to.outerHeight(true) + "px"});
+									}
 								});
               }
             },50);
